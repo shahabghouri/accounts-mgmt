@@ -1,0 +1,34 @@
+<div class="grid">
+  <div class="col-12 md:col-6 m-auto mt-4">
+    <p-card header="Login">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="p-fluid">
+          <div class="p-field mb-3 text-red-500">
+            {{errorMessage}}
+          </div>
+          <div class="p-field mb-3">
+            <label for="username">Username</label>
+            <input id="username" type="text" pInputText formControlName="username" />
+          </div>
+          <div class="p-field mb-3">
+            <label for="password">Password</label>
+            <input id="password" type="password" pInputText formControlName="password" />
+          </div>
+          <!-- <div class="p-field">
+        <label for="ipaddress">IP Address</label>
+        <input id="ipaddress" type="text" pInputText formControlName="ipaddress" />
+      </div>
+      <div class="p-field">
+        <label for="device">Device</label>
+        <input id="device" type="text" pInputText formControlName="device" />
+      </div>
+      <div class="p-field">
+        <label for="browser">Browser</label>
+        <input id="browser" type="text" pInputText formControlName="browser" />
+      </div> -->
+          <button type="submit" [disabled]="!loginForm.valid" pButton label="Login" ></button>
+        </div>
+      </form>
+    </p-card>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="grid">
+  <div class="col-12 md:col-6 xl:col-4 m-auto mt-4">
+    <p-card header="Signup">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <div class="p-fluid">
+          <div class="p-field mb-3 text-red-500">
+            {{errorMessage}}
+          </div>
+          <div class="p-field mb-3">
+            <label for="firstname">First Name</label>
+            <input id="firstname" type="text" pInputText formControlName="firstname" />
+          </div>
+          <div class="p-field mb-3">
+            <label for="lastname">Last Name</label>
+            <input id="lastname" type="text" pInputText formControlName="lastname" />
+          </div>
+          <div class="p-field mb-3">
+            <label for="username">Username</label>
+            <input id="username" type="text" pInputText formControlName="username" />
+          </div>
+          <div class="p-field mb-3">
+            <label for="password">Password</label>
+            <input id="password" type="password" pInputText formControlName="password" />
+          </div>
+          <!-- <div class="p-field mb-3">
+            <label for="device">Device</label>
+            <input id="device" type="text" pInputText formControlName="device" />
+          </div> -->
+          <!-- <div class="p-field mb-3">
+            <label for="ipaddress">IP Address</label>
+            <input id="ipaddress" type="text" pInputText formControlName="ipaddress" />
+          </div> -->
+          <button type="submit" [disabled]="!signupForm.valid" pButton label="Signup" ></button>
+        </div>
+      </form>
+    </p-card>
+  </div>
+</div>
